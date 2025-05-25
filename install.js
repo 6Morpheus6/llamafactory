@@ -30,6 +30,7 @@ module.exports = {
         message: [
           "uv pip install devicetorch tiktoken",
           "uv pip install -e .[metrics]",
+          "uv pip install transformers==4.50.0"
         ]
       }
     },
