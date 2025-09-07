@@ -28,40 +28,11 @@ module.exports = {
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "uv pip install devicetorch tiktoken",
+          "uv pip install devicetorch tiktoken bitsandbytes",
           "uv pip install -e .[metrics]",
           "uv pip install transformers==4.50.0"
         ]
       }
-    },
-    {
-      when: "{{platform === 'win32'}}",
-      method: "shell.run",
-      params: {
-        venv: "env",                // Edit this to customize the venv folder path
-        path: "app",                // Edit this to customize the path to start the shell from
-        message: [
-          "uv pip install https://github.com/jllllll/bitsandbytes-windows-webui/releases/download/wheels/bitsandbytes-0.41.2.post2-py3-none-win_amd64.whl"
-        ]
-      }
-    },
-    {
-      when: "{{platform === 'linux'}}",
-      method: "shell.run",
-      params: {
-        venv: "env",                // Edit this to customize the venv folder path
-        path: "app",                // Edit this to customize the path to start the shell from
-        message: [
-          "uv pip install https://github.com/jllllll/bitsandbytes-windows-webui/releases/download/wheels/bitsandbytes-0.39.0-py3-none-linux_x86_64.whl"
-        ]
-      }
-    },
-    //  Uncomment this step to add automatic venv deduplication (Experimental)
-    //  {
-    //    method: "fs.link",
-    //    params: {
-    //      venv: "app/env"
-    //    }
-    //  }
+    }
   ]
 }
