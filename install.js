@@ -1,4 +1,7 @@
 module.exports = {
+  requires: {
+    bundle: "ai"
+  },
   run: [
     {
       method: "shell.run",
@@ -13,6 +16,7 @@ module.exports = {
       params: {
         uri: "torch.js",
         params: {
+          venv_python: "3.11",
           venv: "env",
           path: "app",
           // xformers: true
@@ -25,9 +29,8 @@ module.exports = {
         venv: "env",
         path: "app",
         message: [
-          "uv pip install devicetorch tiktoken bitsandbytes",
+          "uv pip install bitsandbytes --no-deps",
           "uv pip install -e .[metrics]",
-          "uv pip install transformers==4.50.0"
         ]
       }
     }
