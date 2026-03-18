@@ -5,6 +5,7 @@ module.exports = {
       "when": "{{platform === 'win32' && gpu === 'nvidia'}}",
       "method": "shell.run",
       "params": {
+        "venv_python": "{{args && args.venv_python ? args.venv_python : null}}",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message":[
@@ -18,6 +19,7 @@ module.exports = {
       "when": "{{platform === 'win32' && gpu === 'amd'}}",
       "method": "shell.run",
       "params": {
+        "venv_python": "{{args && args.venv_python ? args.venv_python : null}}",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch-directml torchvision torchaudio numpy==1.26.4"
@@ -28,6 +30,7 @@ module.exports = {
       "when": "{{platform === 'win32' && (gpu !== 'nvidia' && gpu !== 'amd')}}",
       "method": "shell.run",
       "params": {
+        "venv_python": "{{args && args.venv_python ? args.venv_python : null}}",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cpu"
@@ -38,6 +41,7 @@ module.exports = {
       "when": "{{platform === 'darwin' && arch === 'arm64'}}",
       "method": "shell.run",
       "params": {
+        "venv_python": "{{args && args.venv_python ? args.venv_python : null}}",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cpu"
@@ -48,6 +52,7 @@ module.exports = {
       "when": "{{platform === 'darwin' && arch !== 'arm64'}}",
       "method": "shell.run",
       "params": {
+        "venv_python": "{{args && args.venv_python ? args.venv_python : null}}",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cpu"
@@ -58,6 +63,7 @@ module.exports = {
       "when": "{{platform === 'linux' && gpu === 'nvidia'}}",
       "method": "shell.run",
       "params": {
+        "venv_python": "{{args && args.venv_python ? args.venv_python : null}}",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
@@ -72,6 +78,7 @@ module.exports = {
       "when": "{{platform === 'linux' && gpu === 'amd'}}",
       "method": "shell.run",
       "params": {
+        "venv_python": "{{args && args.venv_python ? args.venv_python : null}}",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/rocm6.3"
@@ -82,6 +89,7 @@ module.exports = {
       "when": "{{platform === 'linux' && (gpu !== 'amd' && gpu !=='amd')}}",
       "method": "shell.run",
       "params": {
+        "venv_python": "{{args && args.venv_python ? args.venv_python : null}}",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cpu"
